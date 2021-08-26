@@ -21,3 +21,6 @@ Please note that as of the current version, this repository will only take as in
 
 # Future Additions
 We will be adding more flexible code to handle more types of input.  We will be adding more examples to the Jupyter Notebook.  We will be adding an approximate method for dealing with larger numbers of features.
+
+# Sources
+The files ArrayRecord.py, IteratedTreeContingencyTable.py, and SparseADTree.py are from [uraplutonium](https://github.com/uraplutonium/adtree-py) and used under their [license](https://github.com/uraplutonium/adtree-py/blob/master/LICENSE).  No changes have been made to these files except to include references to their source at the top.
