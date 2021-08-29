@@ -83,20 +83,41 @@ def calcShap(valmat,p,ps):
         res[:,j] = extract((j+1),p,n,ps,valmat)
     return(res)
 
+
+def prep(df):
+    """
+    preprocessing function for inputs
+    
+    Parameters
+    ----------
+    df: The input Pandas dataframe 
+            
+    Returns
+    -------
+    a Pandas dataframe with integer valued categorical features.  Each unique value in the original feature is   replaced with an integer from 1 to the number of unique values.
+    """
+    for col in df.columns:
+        vals = df[col].unique()
+        df[col] = df[col].replace(vals,list(range(1,(1+len(vals)))))
+    return(df.astype('int'))
+    
+    
+
+
 def uniqueShap(df):
     """
     main wrapper function
     
     Parameters
     ----------
-    df: a Pandas dataframe with categorical data.  Currently requires that the features be recoded with levels taking consecutive integer values starting with one. 
+    df: The input Pandas dataframe 
             
     Returns
     -------
     a numpy array of the Uniqueness Shapley values for df
     
     """
-
+    df = prep(df)
     arityList = list(df.nunique())
     recordsTable = df.values.tolist()
     

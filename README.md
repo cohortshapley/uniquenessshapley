@@ -17,10 +17,12 @@ For example notebooks, we need:
 See Jupyter notebook example [here](UniquenessShapley.ipynb)
 
 # Usages
-Please note that as of the current version, this repository will only take as input, pandas data frames with categorical features coded with levels taking consecutive integer values starting with one.  The current implementation has a runtime linear in the number of rows, but exponential in the number of features.
+This implementation as described in section 4 of the paper uses ADTrees and has a runtime linear in the number of rows, but exponential in the number of features.
 
 # Future Additions
-We will be adding more flexible code to handle more types of input.  We will be adding more examples to the Jupyter Notebook.  We will be adding an approximate method for dealing with larger numbers of features.
+We will be adding an approximate method for dealing with larger numbers of features.
 
 # Sources
 The files ArrayRecord.py, IteratedTreeContingencyTable.py, and SparseADTree.py are from [uraplutonium](https://github.com/uraplutonium/adtree-py) and used under their [license](https://github.com/uraplutonium/adtree-py/blob/master/LICENSE).  No changes have been made to these files except to include references to their source at the top.
+
+The dataset.py script allows you to pull the data used for examples in the paper.  The voter registration data from [The North Carolina State Board of Elections](https://www.ncsbe.gov/results-data/voter-registration-data) and the solar flare data from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Solar+Flare).  
