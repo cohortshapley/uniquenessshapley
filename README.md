@@ -8,6 +8,7 @@ This code is tested on:
 - NumPy 1.20.1
 - Pandas 1.2.4
 - scipy 1.6.2
+- requests 2.25.1
 
 For example notebooks, we need:
 - jupyter 1.0.0
