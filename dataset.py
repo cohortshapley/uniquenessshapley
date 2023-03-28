@@ -15,7 +15,9 @@ def NC_clean(raw):
     """
     clean = raw.dropna(subset = ['zip_code'])
     exclude = ['RD','R2','DI'] #removing certain non-applicable voter types (e.g. deceased)
-    clean = clean[~clean['reason_cd'].isin(exclude)][['zip_code','race_code','party_cd','gender_code','birth_age']]
+    features = ['zip_code','race_code','party_cd','gender_code','birth_at_year_end']
+    clean = clean[~clean['reason_cd'].isin(exclude)][features]
+    
     return(clean)
 
 def NC_Dare():
