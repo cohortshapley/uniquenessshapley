@@ -1,5 +1,5 @@
 # Uniqueness Shapley
-Uniqueness Shapley is an EDA tool based on the feature importance method Cohort Shapley, and it quantifies the extent to which different features in a dataset make subjects in that dataset more identifiable.  Using the code in the repository, one can calculate the Uniqueness Shapley value for feature corresponding to each subject or instance in the dataset, which can also be aggregated to answer questions about subpopulations of interest.  For more details on the method and how to interpret the results, please see the [paper](https://arxiv.org/pdf/2105.08013.pdf):
+Uniqueness Shapley is an EDA tool based on the feature importance method Cohort Shapley, and it quantifies the extent to which different features in a dataset make subjects in that dataset more identifiable.  Using the code in the repository, one can calculate the Uniqueness Shapley value for feature corresponding to each subject or instance in the dataset, which can also be aggregated to answer questions about subpopulations of interest.  For more details on the method and how to interpret the results, please see the [paper](https://projecteuclid.org/journals/electronic-journal-of-statistics/volume-17/issue-1/What-makes-you-unique/10.1214/22-EJS2097.full):
 > Seiler, B., Mase, M., & Owen, A. B. (2021). What Makes You Unique? arXiv preprint arXiv:2105.08013.
 
 ## Prerequisites
