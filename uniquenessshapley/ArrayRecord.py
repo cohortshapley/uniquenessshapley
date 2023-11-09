@@ -12,7 +12,7 @@ recordsLength = 0
 def initRecord(args):
     arity = args[0]
     record = args[1]
-    import ArrayRecord
+    from uniquenessshapley import ArrayRecord
     ArrayRecord.arityList = arity
     ArrayRecord.recordsTable = record
     ArrayRecord.arityLength = len(ArrayRecord.arityList)

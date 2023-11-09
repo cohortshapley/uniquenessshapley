@@ -8,11 +8,8 @@ The following improvement methods are used:
 The following changes are made:
 1. Rmin is added to support new ListContingencyTable which could be built from LeafSparseADTree
 '''
-Record = None
 
-def importModules(recordModule):
-    import SparseADTree
-    SparseADTree.Record = __import__(recordModule)
+from . import ArrayRecord as Record
 
 class ADNode(object):
     '''

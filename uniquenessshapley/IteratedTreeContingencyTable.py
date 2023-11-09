@@ -8,13 +8,8 @@ The following improvement methods are used:
 2. Using one loop/iteration to build Contingency table instead of recursion
 3. Using list of lists to represent tree structure instead of having a "Node" class
 '''
-Record = None
-ADTree = None
-
-def importModules(recordModule, ADTreeModule):
-    import IteratedTreeContingencyTable
-    IteratedTreeContingencyTable.Record = __import__(recordModule)
-    IteratedTreeContingencyTable.ADTree = __import__(ADTreeModule)
+from . import ArrayRecord as Record
+from . import SparseADTree as ADTree
 
 class ContingencyTable(object):
     

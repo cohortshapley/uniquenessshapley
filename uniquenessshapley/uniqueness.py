@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 from scipy.special import comb
-import ArrayRecord as Record
-import SparseADTree as ADTree
-import IteratedTreeContingencyTable as ContingencyTable
+from . import ArrayRecord as Record
+from . import SparseADTree as ADTree
+from . import IteratedTreeContingencyTable as ContingencyTable
 
 
 def powerset(s):
@@ -124,12 +124,6 @@ def uniqueShap(df):
     #if __name__ == '__main__':
     # import the original dataset to the record module
     Record.initRecord([arityList, recordsTable])
-
-    # declare that the ADTree module uses ArrayRecord module as dataset
-    ADTree.importModules('ArrayRecord')
-    
-    # declare that the ContingencyTable uses ArrayRecord and SparsADTree modules
-    ContingencyTable.importModules('ArrayRecord', 'SparseADTree')
 
     # initialise recordNums containing all numbers in the dataset
     recordNums = [num for num in range(1, Record.recordsLength+1)]

@@ -2,6 +2,13 @@
 Uniqueness Shapley is an EDA tool based on the feature importance method Cohort Shapley, and it quantifies the extent to which different features in a dataset make subjects in that dataset more identifiable.  Using the code in the repository, one can calculate the Uniqueness Shapley value for feature corresponding to each subject or instance in the dataset, which can also be aggregated to answer questions about subpopulations of interest.  For more details on the method and how to interpret the results, please see the [paper](https://projecteuclid.org/journals/electronic-journal-of-statistics/volume-17/issue-1/What-makes-you-unique/10.1214/22-EJS2097.full):
 > Seiler, B., Mase, M., & Owen, A. B. "What makes you unique?," Electronic Journal of Statistics, Electron. J. Statist. 17(1), 1-18, (2023) 
 
+# Install
+Install the package locally with pip command.
+```bash
+git clone https://github.com/cohortshapley/uniquenessshapley
+pip install -e uniquenessshapley
+```
+
 ## Prerequisites
 This code is tested on:
 - Python 3.8.8
