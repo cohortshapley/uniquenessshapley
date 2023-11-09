@@ -14,10 +14,10 @@ def NC_clean(raw):
     clean: Cleaned pandas dataframe with the five features of interest and missing data removed.
     """
     clean = raw.dropna(subset = ['zip_code'])
-    exclude = ['RD','R2','DI'] #removing certain non-applicable voter types (e.g. deceased)
+    include = ['AV'] #using only verified voters
     features = ['zip_code','race_code','party_cd','gender_code','age_at_year_end']
-    clean = clean[~clean['reason_cd'].isin(exclude)][features]
-    
+    clean = clean[clean['reason_cd'].isin(include)][features]
+    clean['zip_code'] = clean['zip_code'].astype(int)
     return(clean)
 
 def NC_Dare():
@@ -34,7 +34,7 @@ def NC_Dare():
     r = requests.get(url)
     z = zipfile.ZipFile(io.BytesIO(r.content))
     file = z.extract('ncvoter28.txt')
-    df = pd.read_csv(file, delimiter = "\t")
+    df = pd.read_csv(file, encoding='cp1252', delimiter = "\t")
     return(NC_clean(df))
 
 def NC_Statewide():
@@ -51,7 +51,7 @@ def NC_Statewide():
     r = requests.get(url)
     z = zipfile.ZipFile(io.BytesIO(r.content))
     file = z.extract('ncvoter_Statewide.txt')
-    df = pd.read_csv(file, delimiter = "\t")
+    df = pd.read_csv(file, encoding='cp1252', delimiter = "\t")
     return(NC_clean(df))
 
 def NC_Durham():
@@ -68,7 +68,7 @@ def NC_Durham():
     r = requests.get(url)
     z = zipfile.ZipFile(io.BytesIO(r.content))
     file = z.extract('ncvoter32.txt')
-    df = pd.read_csv(file, delimiter = "\t")
+    df = pd.read_csv(file, encoding='cp1252', delimiter = "\t")
     return(NC_clean(df))
 
 def Flare():
